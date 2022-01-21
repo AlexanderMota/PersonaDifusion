@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using PersonaEnCarpetas.Properties;
+using Syncfusion.Licensing;
 
 namespace PersonasUCCommand
 {
@@ -13,5 +15,7 @@ namespace PersonasUCCommand
     /// </summary>
     public partial class App : Application
     {
+        public App()  =>  //Register Syncfusion license
+            SyncfusionLicenseProvider.RegisterLicense(Settings.Default.ClaveSyncfusion);
     }
 }

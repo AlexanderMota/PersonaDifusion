@@ -22,5 +22,32 @@ namespace PersonaEnCarpetas.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5Ee" +
+            "kU9")]
+        public string ClaveSyncfusion {
+            get {
+                return ((string)(this["ClaveSyncfusion"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>R. Dominicana</string>
+  <string>Venezuela</string>
+  <string>España</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection SamplesNacionalidades {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["SamplesNacionalidades"]));
+            }
+            set {
+                this["SamplesNacionalidades"] = value;
+            }
+        }
     }
 }

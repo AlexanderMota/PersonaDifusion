@@ -29,8 +29,8 @@ namespace PersonasUCCommand.view
             this.DataContext = vm;
         }
 
-        private void GuardaPersona_Click(object sender, RoutedEventArgs e) =>
-            vm.GuardaPersona(new Persona(textNombre.Text, int.Parse(textEdad.Text), textCBNacionalidad.SelectedItem.ToString()));
+        /*private void GuardaPersona_Click(object sender, RoutedEventArgs e) =>
+            vm.GuardaPersona(new Persona(textNombre.Text, int.Parse(textEdad.Text), textCBNacionalidad.SelectedItem.ToString()));*/
         
     }
 }

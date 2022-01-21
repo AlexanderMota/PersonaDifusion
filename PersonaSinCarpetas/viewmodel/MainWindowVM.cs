@@ -14,7 +14,7 @@ namespace PersonasUCCommand.viewmodel
 {
     class MainWindowVM : ObservableObject
     {
-        //private UserControl agregapersona;
+        //Propiedades
         private UserControl uc;
         public UserControl UsControl
         {
@@ -22,10 +22,12 @@ namespace PersonasUCCommand.viewmodel
             set => SetProperty(ref uc, value);
         }
 
+        //Servicios y comandos
         private Navegacion nav;
         public RelayCommand UCListaPersonasCommand { get; }
         public RelayCommand UCNuevaPersonaCommand { get; }
 
+        //Constructores
         public MainWindowVM()
         {
             this.nav = new Navegacion();
@@ -33,9 +35,11 @@ namespace PersonasUCCommand.viewmodel
             this.UCNuevaPersonaCommand = new RelayCommand(MuestraUCNuevaPersona);
         }
 
+        //Métodos privados
         private void MuestraUCListaPersonas() => this.UsControl = nav.MuestraListaPersonasUC();
 
         private void MuestraUCNuevaPersona() => this.UsControl = nav.MuestraNuevaPersonaUC();
 
+        //Métodos publicos
     }
 }

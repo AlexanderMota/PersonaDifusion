@@ -5,7 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PersonasUCCommand.view" xmlns:viewmodel="clr-namespace:PersonasUCCommand.viewmodel" d:DataContext="{d:DesignInstance Type=viewmodel:AgregaPersonaVM}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms">
     <StackPanel
                 Orientation="Vertical">
         <StackPanel
@@ -13,14 +15,25 @@
                     Height="60"
                     Orientation="Vertical">
             <Label Content="Nombre"/>
-            <TextBox x:Name="textNombre"/>
+            <inputLayout:SfTextInputLayout
+                Hint="Nombre"
+                HintFloatMode="Float"
+                HelperText="Introduce tu nombre">
+                <TextBox Text="{Binding Path=Nombre}"/>
+            </inputLayout:SfTextInputLayout>
         </StackPanel>
         <StackPanel
                     Margin="10,10,10,0"
                     Height="60"
                     Orientation="Vertical">
             <Label Content="Edad"/>
-            <TextBox x:Name="textEdad"/>
+
+            <inputLayout:SfTextInputLayout
+                Hint="Edad"
+                HintFloatMode="Float"
+                HelperText="Introduce tu edad">
+                <TextBox Text="{Binding Path=Edad}"/>
+            </inputLayout:SfTextInputLayout>
 
         </StackPanel>
         <StackPanel
@@ -31,10 +44,30 @@
 
             <StackPanel
                         Orientation="Horizontal">
-                <ComboBox
+
+
+                <inputLayout:SfTextInputLayout
+                Hint="Edad"
+                HintFloatMode="Float"
+                HelperText="Introduce tu edad">
+
+                    <ComboBox
                      x:Name="textCBNacionalidad"
+                    SelectedItem="{Binding Path=Nacionalidad}"
                     ItemsSource="{Binding Path=Nacionalidades}"
                             Width="200"/>
+
+                </inputLayout:SfTextInputLayout>
+
+<!--
+                <combobox:SfComboBox 
+                    HeightRequest="40" 
+                    x:Name="comboBox" 
+                    MaximumDropDownHeight="200" 
+                    IsEditableMode="true">
+
+                </combobox:SfComboBox>
+-->
                 <Button
                     Command="{Binding Path= UserControlNacionalidadCommand}"
                             Content="+"
@@ -44,7 +77,7 @@
             </StackPanel>
         </StackPanel>
         <Button
-            Click="GuardaPersona_Click"
+            Command="{Binding Path=AceptarPersonadCommand}"
             Margin="10,10,10,0"
             Content="Aceptar"
             Height="20"
